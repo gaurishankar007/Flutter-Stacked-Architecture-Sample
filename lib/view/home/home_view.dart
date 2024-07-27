@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stacked_architecture/core/services/locator.dart';
 import 'package:stacked/stacked.dart';
-import 'package:stacked_services/stacked_services.dart';
 
-import '../counter/counter_view.dart';
 import 'home_view_model.dart';
 
 class HomeView extends StackedView<HomeViewModel> {
@@ -26,8 +23,7 @@ class HomeView extends StackedView<HomeViewModel> {
           children: [
             const SizedBox(width: double.maxFinite),
             ElevatedButton(
-              onPressed: () => locator<NavigationService>()
-                  .navigateToView(const CounterView()),
+              onPressed: viewModel.navigateToCounterView,
               child: const Text("Counter View"),
             ),
           ],

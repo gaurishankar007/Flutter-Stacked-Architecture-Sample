@@ -15,11 +15,13 @@ class CounterViewWidget extends StackedView<CounterViewModel> {
     Widget? child,
   ) {
     log("Counter Widget Rebuilt");
+
     return Column(
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const SizedBox(width: double.maxFinite),
-        Text("Counter ${viewModel.counter}"),
+        Text("Counter: ${viewModel.counter}"),
         const SizedBox(height: 20),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

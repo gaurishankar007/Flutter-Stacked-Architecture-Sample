@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:stacked_architecture/core/services/locator.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-import 'config/routes/routes.router.dart';
+import 'app/app.locator.dart';
+import 'app/app.router.dart';
 
 void main() {
-  setupLocators();
+  setupLocator();
   runApp(const StackedArchitecture());
 }
 

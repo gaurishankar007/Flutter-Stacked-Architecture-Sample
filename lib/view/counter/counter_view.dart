@@ -3,6 +3,7 @@ import 'package:stacked/stacked.dart';
 
 import 'counter_view_model.dart';
 import 'widgets/counter_widget.dart';
+import 'widgets/random_count_widget.dart';
 
 class CounterView extends StackedView<CounterViewModel> {
   const CounterView({super.key});
@@ -13,9 +14,17 @@ class CounterView extends StackedView<CounterViewModel> {
     CounterViewModel viewModel,
     Widget? child,
   ) {
-    return const Scaffold(
-      body: SafeArea(
-        child: CounterViewWidget(),
+    return Scaffold(
+      appBar: AppBar(title: const Text("Counter")),
+      body: const SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CounterViewWidget(),
+            SizedBox(height: 40),
+            RandomCountWidget(),
+          ],
+        ),
       ),
     );
   }
