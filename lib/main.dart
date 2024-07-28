@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:stacked_architecture/app/app.bottomsheets.dart';
+import 'package:stacked_architecture/app/app.dialogs.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 import 'app/app.locator.dart';
 import 'app/app.router.dart';
 
-void main() {
-  setupLocator();
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupLocator();
+  setupDialogUi();
+  setupBottomSheetUi();
   runApp(const StackedArchitecture());
 }
 
